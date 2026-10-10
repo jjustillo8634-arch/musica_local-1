@@ -27,7 +27,7 @@ jobs:
 
       - name: Generar archivos nativos de Android
         run: |
-          flutter create . --platforms=android --org=com.miapp.audioplayer
+          flutter create . --project-name musica_local --platforms=android --org=com.miapp.audioplayer
 
       - name: Obtener dependencias
         run: flutter pub get
