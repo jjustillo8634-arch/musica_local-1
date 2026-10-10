@@ -25,14 +25,12 @@ jobs:
           channel: 'stable'
           cache: true
 
+      - name: Generar archivos nativos de Android
+        run: |
+          flutter create . --platforms=android --org=com.miapp.audioplayer
+
       - name: Obtener dependencias
         run: flutter pub get
-
-      - name: Ejecutar script de parche si existe
-        run: |
-          if [ -f tools/patch_android.py ]; then
-            python3 tools/patch_android.py
-          fi
 
       - name: Compilar APK
         run: flutter build apk --release
